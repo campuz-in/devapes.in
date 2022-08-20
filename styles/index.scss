@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import "./variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+  text-decoration: none;
+  color: $text-color;
+}
+
+section {
+  height: calc($height-screen - 80px);
+  min-height: 700px;
+  @media screen and (max-width: $desktop-screen) {
+    height: auto;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: $width-xl;
+  padding: 0 $size-4;
+
+  @media screen and (max-width: $desktop-screen) {
+    width: $width-lg;
+  }
+
+  @media screen and (max-width: $laptop-screen) {
+    width: $width-md;
+  }
+
+  @media screen and (max-width: $tablet-xl-screen) {
+    width: $width-sm;
+  }
+
+  @media screen and (max-width: $tablet-screen) {
+    width: $width-xs;
+  }
+
+  @media screen and (max-width: $mobile-screen) {
+    width: $auto;
+  }
+
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.evenly {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title {
+  font-size: $size-6;
+  font-weight: $weight-bold;
+}
+
+.subtitle {
+  color: $text-color-alt;
+  font-weight: $weight-medium;
+}
+
+.btn{
+  background-color: $black;
+  padding: $size-6 $size-12;
+  color: $white;
+  border-radius: $radius-full;
+  font-weight: $weight-semibold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &-primary {
+    background-color: $primary-color;
+  }
+
+  &-secondary {
+    background-color: $secondary-color;
+  }
+
+  @media screen and (max-width: $mobile-screen) {
+    padding: $size-4 $size-6;
+    font-size: $size-4;
+  }
+}
+
+.navbar {
+  padding: $size-6 0;
+  box-shadow: $elevation-3;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: $background-color;
+
+  @media screen and (max-width: $mobile-screen) {
+    padding: $size-4 0;
+  }
+
+  .left-section {
+    .logo {
+      font-size: $size-5;
+    }
+  }
+
+  .right-section {
+    gap: $size-8;
+    @media screen and (max-width: $tablet-screen) {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: $size-2;
+    cursor: pointer;
+    .bar {
+      background: $text-color;
+      min-height: $size-0\.5;
+      min-width: $size-8;
+      border-radius: $radius-xl;
+    }
+    @media screen and (max-width: $tablet-screen) {
+      display: flex;
+    }
+  }
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 78px;
+  min-width: $width-xs;
+  height: $height-screen;
+  box-shadow: $elevation-6;
+  z-index: 1;
+  transition: all;
+  transition-duration: 300ms;
+  padding-top: $size-4;
+  background-color: $background-color;
+
+  a {
+    padding: $size-4 $size-6;
+
+    &:hover{
+      background-color: $primary-color;
+      color: $background-color;
+    }
+  }
+
+  &.hidden {
+    right: -100%;
+  }
+
+  @media screen and (max-width: $tablet-screen) {
+    display: flex;
+  }
+
+  @media screen and (max-width: $mobile-screen) {
+    min-width: $width-full;
+    top: 62px;
+  }
+}
+
+.section-1 {
+  position: relative;
+
+  @media screen and (max-width: $laptop-screen) {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin-bottom: $size-16;
+  }
+
+  @media screen and (max-width: $mobile-screen) {
+    margin-top: $size-16;
+  }
+
+  .left-section {
+    max-width: 60%;
+    .title {
+      font-size: $size-14;
+      background: transparent;
+      margin-bottom: $size-12;
+    }
+    @media screen and (max-width: $laptop-screen) {
+      text-align: center;
+      max-width: 100%;
+      margin-top: $size-8;
+      .title {
+        font-size: $size-12;
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: $tablet-screen) {
+      .title {
+        font-size: $size-8;
+      }
+    }
+    @media screen and (max-width: $mobile-screen) {
+      margin-top: $size-6;
+      .title {
+        font-size: $size-6;
+      }
+    }
+  }
+
+  .right-section {
+    img {
+      width: $width-xs;
+      @media screen and (max-width: $mobile-screen) {
+        width: $size-80;
+      }
+    }
+    @media screen and (max-width: $laptop-screen) {
+      margin-top: $size-8;
+    }
+  }
+}
+
+.section-2 {
+  padding: $size-16 0;
+  .title{
+    margin-bottom: $size-16;
+    font-size: $size-10;
+    text-align: center;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: $grid-3;
+    flex-wrap: wrap;
+    gap: $size-16;
+    justify-content: space-between;
+    @media screen and (max-width: $desktop-screen) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  .card {
+    box-shadow: $elevation-4;
+    padding: $size-4 $size-6;
+    border-radius: $radius-lg;
+    height: $size-80;
+    width: $size-80;
+    img {
+      width: $size-48;
+      margin-top: $size-3;
+    }
+    h1 {
+      font-size: $size-5;
+      margin-top: $size-4;
+    }
+    p{
+      font-size: $size-4;
+      color: $text-color-alt;
+      margin-top: $size-2;
+    }
+  }
+}
+
+.section-3 {
+  padding: $size-16 0;
+  justify-content: space-between;
+
+  @media screen and (max-width: $laptop-screen) {
+    .container {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+  }
+
+  .label {
+    font-size: $size-5;
+    margin-bottom: $size-4;
+    font-weight: $weight-semibold;
+  }
+
+  .left-section{
+    width: 35%;
+    @media screen and (max-width: $laptop-screen) {
+      width: 100%;
+      text-align: center;
+    }
+    .contact {
+      margin-bottom: $size-4;
+      h1 {
+        margin-bottom: $size-2;
+        font-size: $size-5;
+        font-weight: $weight-semibold;
+      }
+      p {
+        font-size: $size-6;
+        font-weight: $weight-light;
+      }
+      @media screen and (max-width: $laptop-screen) {
+        margin-bottom: $size-16;
+      }
+    }
+    .icon-wrapper {
+      gap: $size-8;
+      @media screen and (max-width: $laptop-screen) {
+        justify-content: center;
+        margin-bottom: $size-16;
+      }
+      svg {
+        width: $size-8;
+        cursor: pointer;
+
+        &:hover {
+          fill: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .right-section {
+    width: 65%;
+    @media screen and (max-width: $laptop-screen) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: $size-16;
+
+      .btn {
+        width: 100%;
+      }
+    }
+    .title {
+      font-size: $size-12;
+      margin-bottom: $size-8;
+    }
+    .services {
+      margin-bottom: $size-8;
+
+      & > p {
+        margin-bottom: $size-4;
+        font-size: $size-5;
+        text-align: left;
+        font-weight: $weight-semibold;
+      }
+
+      .options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $size-6;
+
+        .option {
+          padding: $size-2  $size-8;
+          background-color: $text-color-alt;
+          border-radius: $radius-full;
+          cursor: pointer;
+
+          &.active {
+            background-color: $primary-color;
+            color: $white;
+          }
+        }
+      }
+    }
+    input, textarea {
+      font-family: "Poppins", sans-serif;
+      border: none;
+      border-bottom: 1px solid $text-color-alt;
+      outline: none;
+      width: $width-full;
+      resize: none;
+      margin-bottom: $size-12;
+      font-size: $size-6;
+      padding: $size-1;
+      height: $size-12;
+
+      &::placeholder {
+        color:$text-color-alt;
+      }
+
+      &:focus {
+        border-bottom: 3px solid $primary-color;
+      }
+    }
+  }
+}
