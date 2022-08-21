@@ -20,14 +20,6 @@ a {
   color: $text-color;
 }
 
-section {
-  height: calc($height-screen - 80px);
-  min-height: 700px;
-  @media screen and (max-width: $desktop-screen) {
-    height: auto;
-  }
-}
-
 .container {
   margin: 0 auto;
   width: $width-xl;
@@ -201,6 +193,7 @@ section {
 
 .section-1 {
   position: relative;
+  padding: $size-24 0;
 
   @media screen and (max-width: $laptop-screen) {
     flex-direction: column-reverse;
@@ -255,7 +248,8 @@ section {
 }
 
 .section-2 {
-  padding: $size-16 0;
+  padding: $size-32 0;
+
   .title{
     margin-bottom: $size-16;
     font-size: $size-10;
@@ -294,9 +288,10 @@ section {
   }
 }
 
-.section-3 {
-  padding: $size-16 0;
+#contact {
+  padding: $size-32 0;
   justify-content: space-between;
+  height: auto;
 
   @media screen and (max-width: $laptop-screen) {
     .container {
@@ -343,7 +338,7 @@ section {
         cursor: pointer;
 
         &:hover {
-          fill: $secondary-color;
+          fill: $primary-color;
         }
       }
     }
@@ -381,7 +376,7 @@ section {
 
         .option {
           padding: $size-2  $size-8;
-          background-color: $text-color-alt;
+          background-color: #dfdfdf;
           border-radius: $radius-full;
           cursor: pointer;
 
@@ -412,5 +407,38 @@ section {
         border-bottom: 3px solid $primary-color;
       }
     }
+  }
+}
+
+#about {
+  padding: $size-24 0 $size-32 0;
+  height: auto;
+  background-color: #eff3fd;
+
+  @keyframes ani{
+    0%{background-position: 0 0;}
+    100%{background-position: 100vw 0;}
+  }
+
+  .content {
+    margin-bottom: $size-40;
+    text-align: center;
+
+    .title {
+      font-size: $size-12;
+      margin-bottom: $size-8;
+    }
+
+    .subtitle {
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: $size-12;
+    }
+  }
+
+  .slider {
+    background:url(../assets/team.png) repeat-x 0 / 100% auto;
+    height: 350px; /* this value is not important, just not zero */
+    animation: ani 10s linear infinite ;
   }
 }
