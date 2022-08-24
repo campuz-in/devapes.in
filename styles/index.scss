@@ -193,7 +193,7 @@ a {
 
 .section-1 {
   position: relative;
-  padding: $size-24 0;
+  padding: $size-24 0 0 0;
 
   @media screen and (max-width: $laptop-screen) {
     flex-direction: column-reverse;
@@ -202,7 +202,7 @@ a {
   }
 
   @media screen and (max-width: $mobile-screen) {
-    margin-top: $size-16;
+    margin-top: 0;
   }
 
   .left-section {
@@ -254,6 +254,9 @@ a {
     margin-bottom: $size-16;
     font-size: $size-10;
     text-align: center;
+    @media screen and (max-width: $tablet-screen) {
+      font-size: $size-8;
+    }
   }
   .wrapper {
     display: grid;
@@ -292,6 +295,10 @@ a {
   padding: $size-32 0;
   justify-content: space-between;
   height: auto;
+
+  @media screen and (max-width: $tablet-screen) {
+    padding: $size-16 0;
+  }
 
   @media screen and (max-width: $laptop-screen) {
     .container {
@@ -358,6 +365,9 @@ a {
     .title {
       font-size: $size-12;
       margin-bottom: $size-8;
+      @media screen and (max-width: $tablet-screen) {
+        font-size: $size-8;
+      }
     }
     .services {
       margin-bottom: $size-8;
@@ -427,12 +437,18 @@ a {
     .title {
       font-size: $size-12;
       margin-bottom: $size-8;
+      @media screen and (max-width: $tablet-screen) {
+        font-size: $size-6;
+      }
     }
 
     .subtitle {
       width: 70%;
       margin: 0 auto;
       margin-bottom: $size-12;
+      @media screen and (max-width: $tablet-screen) {
+        width: 100%;
+      }
     }
   }
 
@@ -440,5 +456,14 @@ a {
     background:url(../assets/team.png) repeat-x 0 / 100% auto;
     height: 350px; /* this value is not important, just not zero */
     animation: ani 10s linear infinite ;
+
+    @media screen and (max-width: $tablet-screen) {
+      animation: none;
+      background-size: cover;
+      height: 250px; /* this value is not important, just not zero */
+      background-position: -10px 0;
+    }
   }
+
+
 }
