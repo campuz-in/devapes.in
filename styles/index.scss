@@ -326,9 +326,15 @@ a {
         font-size: $size-5;
         font-weight: $weight-semibold;
       }
-      p {
+      a {
         font-size: $size-6;
         font-weight: $weight-light;
+        transition: all;
+        transition-duration: 300ms;
+        &:hover {
+          color: $secondary-color;
+          font-weight: $weight-semibold;
+        }
       }
       @media screen and (max-width: $laptop-screen) {
         margin-bottom: $size-16;
@@ -345,7 +351,7 @@ a {
         cursor: pointer;
 
         &:hover {
-          fill: $primary-color;
+          fill: $secondary-color;
         }
       }
     }
