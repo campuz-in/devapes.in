@@ -275,6 +275,12 @@ a {
     border-radius: $radius-lg;
     height: $size-80;
     width: $size-80;
+    &:nth-child(4){
+      img {
+        height: $size-48;
+        width: $size-52;
+      }
+    }
     img {
       width: $size-48;
       margin-top: $size-3;
