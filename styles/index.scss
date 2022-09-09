@@ -98,6 +98,10 @@ a {
   border: none;
   cursor: pointer;
 
+  &:hover {
+    transform: scale(1.01);
+  }
+
   &-primary {
     background-color: $primary-color;
   }
@@ -191,9 +195,9 @@ a {
   }
 }
 
-.section-1 {
+#home {
   position: relative;
-  padding: $size-24 0 0 0;
+  padding: $size-32 0;
 
   @media screen and (max-width: $laptop-screen) {
     flex-direction: column-reverse;
@@ -203,6 +207,7 @@ a {
 
   @media screen and (max-width: $mobile-screen) {
     margin-top: 0;
+    padding: $size-20 0;
   }
 
   .left-section {
@@ -247,8 +252,8 @@ a {
   }
 }
 
-.section-2 {
-  padding: $size-32 0;
+#services {
+  padding: $size-24 0;
 
   .title{
     margin-bottom: $size-16;
@@ -273,8 +278,10 @@ a {
     box-shadow: $elevation-4;
     padding: $size-4 $size-6;
     border-radius: $radius-lg;
-    height: $size-80;
+    min-height: $size-80;
     width: $size-80;
+    background-color: white;
+    border: solid 0.1px #00000011;
     &:nth-child(4){
       img {
         height: $size-48;
@@ -337,9 +344,10 @@ a {
         font-weight: $weight-light;
         transition: all;
         transition-duration: 300ms;
+        transition-timing-function: ease-in;
         &:hover {
           color: $secondary-color;
-          font-weight: $weight-semibold;
+          font-weight: $weight-medium;
         }
       }
       @media screen and (max-width: $laptop-screen) {
@@ -433,9 +441,8 @@ a {
 }
 
 #about {
-  padding: $size-24 0 $size-32 0;
+  padding: $size-24 0 $size-12 0;
   height: auto;
-  background-color: #eff3fd;
 
   @keyframes ani{
     0%{background-position: 0 0;}
@@ -478,4 +485,42 @@ a {
   }
 
 
+}
+
+#work {
+  padding-top: $size-24;
+  .title {
+    font-size: $size-10;
+    text-align: center;
+    margin-bottom: $size-16;
+    @media screen and (max-width: $tablet-screen) {
+      font-size: $size-8;
+    }
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    flex-wrap: wrap;
+    gap: 64px;
+    justify-content: space-between;
+    @media screen and (max-width: $desktop-screen) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .card {
+      box-shadow: $elevation-4;
+      border-radius: $radius-xl;
+      overflow: hidden;
+      display: flex;
+      width: $size-96;
+      height: $size-96;
+      border: solid 0.5px #0000002f;
+      @media screen and (max-width: $mobile-screen) {
+        width: $size-80;
+        height: $size-80;
+      }
+    }
+  }
 }
